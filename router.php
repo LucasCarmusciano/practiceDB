@@ -1,4 +1,7 @@
 <?php
+require_once 'home.php';
+require_once 'list.php';
+
 if($_GET['action']==''){
     $action='home';
 }else{
@@ -8,10 +11,10 @@ if($_GET['action']==''){
 $parse = explode('/',$action);
 switch($parse[0]){
     case 'home':
-        echo "aca va el formulario para llenar";
+        showHome();
         break;
     case 'list':
-        echo "aca va la lista";
+        showList();
         break;
 }
 ?>
