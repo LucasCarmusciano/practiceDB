@@ -1,4 +1,7 @@
-<?php function showHome(){ ?>
+<?php 
+    require_once "ddbb.php";   
+    function showHome(){ 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +19,15 @@
         <button type="submit">Enviar</button>
         <a href="list/">Ver lista</a>
     </form>
+    <?php 
+    if(isset($_REQUEST['nombre'])&&isset($_REQUEST['apellido'])&&isset($_REQUEST['edad'])){
+        $nombre = $_REQUEST['nombre'];
+        $apellido = $_REQUEST['apellido'];
+        $edad = $_REQUEST['edad'];
+        
+        insertList($nombre, $apellido, $edad);
+    }
+    ?>
 </body>
 </html>
 
