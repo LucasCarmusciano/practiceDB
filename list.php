@@ -1,4 +1,6 @@
-<?php function showList(){ ?>
+<?php 
+require_once "ddbb.php";
+function showList(){ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +12,7 @@
 </head>
 <body>
     <?php
+        $list = getList();
         echo "<table>";
             echo "<tr>";
                 echo "<td>ID</td>";
@@ -17,6 +20,15 @@
                 echo "<td>Apellido</td>";
                 echo "<td>Edad</td>";
             echo "</tr>";
+            foreach ($list as $person){
+                echo "<tr>";
+                    echo "<td>$person->id</td>";
+                    echo "<td>$person->name</td>";
+                    echo "<td>$person->lastname</td>";
+                    echo "<td>$person->age</td>";
+                echo "</tr>";
+            }
+        echo "</table>";
         ?>
 </body>
 </html>
