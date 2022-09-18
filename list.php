@@ -26,6 +26,14 @@ function showList(){ ?>
                     echo "<td>$person->name</td>";
                     echo "<td>$person->lastname</td>";
                     echo "<td>$person->age</td>";
+                    echo '<td>
+                        <form action="" method="POST">
+                        <input type="submit" name="borrar'.$person->id.'" placeholder="Borrar">
+                        </form>
+                        </td>';
+                    if(isset($_POST['borrar'.$person->id])){
+                        deleteList($person->id);
+                    }
                 echo "</tr>";
             }
         echo "</table>";
