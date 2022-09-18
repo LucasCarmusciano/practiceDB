@@ -24,8 +24,10 @@ function deleteList($id){
     $query->execute([$id]);
 }
 
-function queseyo(){
-    echo "hola";
-
+function getOlder($edad){
+    $db = connect();
+    $query = $db->prepare('SELECT * FROM nombres WHERE age >='.$edad.' ORDER BY age DESC');
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_OBJ);
 }
 ?>
