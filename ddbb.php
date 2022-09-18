@@ -14,7 +14,18 @@ function getList(){
 
 function insertList($nombre, $apellido, $edad){
     $db = connect();
-    $query = $db->prepare("INSERT INTO nombres(name,lastname, age) VALUES (?,?,?)");
+    $query = $db->prepare('INSERT INTO nombres(name,lastname, age) VALUES (?,?,?)');
     $query->execute([$nombre, $apellido, $edad]);
+}
+
+function deleteList($id){
+    $db = connect();
+    $query = $db->prepare('DELETE FROM nombres where id=?');
+    $query->execute([$id]);
+}
+
+function queseyo(){
+    echo "hola";
+
 }
 ?>
