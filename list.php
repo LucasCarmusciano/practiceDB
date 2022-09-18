@@ -38,6 +38,8 @@ function showList(){ ?>
             }
         echo "</table>";
         ?>
+        <a href="home">Volver</a>
+
 </body>
 </html>
 
