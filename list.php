@@ -28,7 +28,7 @@ function showList(){ ?>
                     echo "<td>$person->age</td>";
                     echo '<td>
                         <form action="" method="POST">
-                        <input type="submit" name="borrar'.$person->id.'" placeholder="Borrar">
+                        <button type="submit" name="borrar'.$person->id.'">Borrar</button>
                         </form>
                         </td>';
                     if(isset($_POST['borrar'.$person->id])){
